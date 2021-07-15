@@ -1,13 +1,33 @@
 // ---
 class LeadForm {
     // ---
-
-    // ---
     constructor() {
         this.formElements = {
             name: "lead-form-name",
             email: "lead-form-email",
         };
+    }
+    // ---
+}
+// ---
+class LeadValidation extends LeadForm {
+    // ---
+    constructor() {
+        super();
+    }
+    // ---
+    emailField() {
+        const regex = /\S+@\S+\.\S+/;
+        const email = document.getElementById(this.formElements['email']).value;
+        return regex.test(email);
+    }
+    // ---
+}
+// ---
+class LeadResponse extends LeadForm {
+    // ---
+    constructor() {
+        super();
     }
     // ---
     read() {
@@ -38,22 +58,7 @@ class LeadForm {
     // ---
 }
 // ---
-class LeadValidation extends LeadForm {
-    // ---
-    constructor() {
-        super();
-    }
-    // ---
-    emailField() {
-        const regex = /\S+@\S+\.\S+/;
-        const email = document.getElementById(this.formElements['email']).value;
-        console.log(email)
-        return regex.test(email);
-    }
-    // ---
-}
-// ---
-const leadForm = new LeadForm();
+const leadResponse = new LeadResponse();
 const formResponse = {};
 // ---
 main();
@@ -62,12 +67,12 @@ function main() {
     document.addEventListener("submit", event => {
         event.preventDefault();
 
-        leadForm.read();
-        leadForm.store();
-        leadForm.clear();
-        leadForm.greet();
+        leadResponse.read();
+        leadResponse.store();
+        leadResponse.clear();
+        leadResponse.greet();
 
-        leadForm.storeAtCloud();
+        leadResponse.storeAtCloud();
     });
 }
 // ---
