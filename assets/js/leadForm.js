@@ -25,7 +25,7 @@ function main() {
     });
 }
 // ---
-window.validateEmail = function validateEmail() {
+window.validateEmail = () => {
     const formValidator = new LeadValidation(formElements);
     const isValid = formValidator.emailField();
     return isValid;
