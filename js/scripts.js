@@ -1,19 +1,21 @@
 // ---
+const formElements = {
+    name: "lead-form-name",
+    email: "lead-form-email",
+};
+// ---
 class LeadForm {
     // ---
-    constructor() {
-        this.formElements = {
-            name: "lead-form-name",
-            email: "lead-form-email",
-        };
+    constructor(formElements) {
+        this.formElements = formElements;
     }
     // ---
 }
 // ---
 class LeadValidation extends LeadForm {
     // ---
-    constructor() {
-        super();
+    constructor(formElements) {
+        super(formElements);
     }
     // ---
     emailField() {
@@ -26,14 +28,14 @@ class LeadValidation extends LeadForm {
 // ---
 class LeadResponse extends LeadForm {
     // ---
-    constructor() {
-        super();
+    constructor(formElements) {
+        super(formElements);
     }
     // ---
     read() {
         for (const property in this.formElements) {
             formResponse[property] = document.getElementById(this.formElements[property]).value;
-            console.log(`### DEBUG ### ${formResponse[property]}`);
+            console.log(`### DEBUG ### formResponse.${property} = ${formResponse[property]}`);
         }
     }
     // ---
@@ -58,7 +60,7 @@ class LeadResponse extends LeadForm {
     // ---
 }
 // ---
-const leadResponse = new LeadResponse();
+const leadResponse = new LeadResponse(formElements);
 const formResponse = {};
 // ---
 main();
@@ -77,8 +79,8 @@ function main() {
 }
 // ---
 function validateEmail() {
-    const formValidator = new LeadValidation();
+    const formValidator = new LeadValidation(formElements);
     const isValid = formValidator.emailField();
     return isValid;
 }
-// --- EOF
+// EOF
