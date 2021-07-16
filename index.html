@@ -20,12 +20,13 @@
     <section class="section-container background-footer" id="lead-bump">
         <form class="bump form-container" id="lead-form" action="">
             <!-- Name Email Submit Button -->
-            <input type="text" id="lead-form-name" placeholder=" seu nome" required />
-            <input type="text" id="lead-form-email" placeholder=" e-mail pessoal" onkeyup="validateEmail()" required />
+            <input type="text" id="lead-form-name" placeholder="primeiro nome" oninput="validateForm(this)" />
+            <input type=" text" id="lead-form-email" placeholder="e-mail pessoal" oninput="validateForm(this)" />
             <button id="lead-form-submit"></button>
         </form>
     </section>
     <section class="section-container" id="product-list">
+        <a href="/checkout/">click me</a>
         <!-- Produto 01 onkeyup="validateEmail()" -->
         <!-- Produto 02 -->
         <!-- Produto 03 -->

@@ -13,22 +13,37 @@ main();
 // ---
 function main() {
     const form = document.querySelector('.form-container');
+    const formValidator = new LeadValidation(formElements);
 
     form.addEventListener("submit", event => {
         event.preventDefault();
 
+        if (!formValidator.isReady()) {
+            return false;
+        }
+
+        alert("Gratidão pela inscrição!");
+
         leadResponse.read();
-        leadResponse.store();
+        leadResponse.local();
         leadResponse.clear();
         leadResponse.greet();
 
-        leadResponse.storeAtCloud();
+        leadResponse.store();
+
+        return true;
     });
+
+    return true;
 }
 // ---
-window.validateEmail = () => {
+window.validateForm = (formField) => {
     const formValidator = new LeadValidation(formElements);
-    const isValid = formValidator.emailField();
-    return isValid;
+
+    if (!formValidator.isReady(formField.id)) {
+        return false;
+    }
+
+    return true;
 }
 // EOF

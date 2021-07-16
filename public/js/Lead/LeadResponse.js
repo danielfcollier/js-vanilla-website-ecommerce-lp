@@ -10,11 +10,10 @@ export default class LeadResponse extends LeadForm {
     read() {
         for (const property in this.formElements) {
             this.formResponse[property] = document.getElementById(this.formElements[property]).value;
-            //console.log(`### DEBUG ### formResponse.${property} = ${this.formResponse[property]}`);
         }
     }
     // ---
-    store() {
+    local() {
         for (const property in this.formElements) {
             localStorage.setItem(property, this.formResponse[property]);
         }
@@ -31,7 +30,7 @@ export default class LeadResponse extends LeadForm {
         // Modal Window or Text Line: say thank you!
     }
     // ---
-    storeAtCloud() { }
+    store() { }
     // ---
 }
 // EOF
