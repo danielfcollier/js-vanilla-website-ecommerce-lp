@@ -17,14 +17,14 @@ export default class LeadValidation extends LeadForm {
     isReady(formFieldId = "") {
         switch (formFieldId) {
             case this.formElements.name:
-                this.#nameField();
+                this.#nameCheck();
                 break;
             case this.formElements.email:
-                this.#emailField();
+                this.#emailCheck();
                 break;
             default:
-                this.#emailField();
-                this.#nameField();
+                this.#emailCheck();
+                this.#nameCheck();
                 break;
         }
 
@@ -36,7 +36,7 @@ export default class LeadValidation extends LeadForm {
         return isReadyStatus;
     }
     // ---
-    #nameField() {
+    #nameCheck() {
         const element = document.getElementById(this.formElements.name);
 
         this.#isValid.name = (element.value === "") ? false : true;
@@ -47,7 +47,7 @@ export default class LeadValidation extends LeadForm {
         element.reportValidity();
     }
     // ---
-    #emailField() {
+    #emailCheck() {
         const element = document.getElementById(this.formElements.email);
 
         const regex = /\S+@\S+\.\S+/;
