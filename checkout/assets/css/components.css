@@ -1,0 +1,551 @@
+/* End order button */
+
+.defaultTunaButton {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    background-color: #31B34E;
+    border-radius: 30px;
+    display: block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 12px 30px;
+    text-decoration: none;
+    border: 0;
+    width: 100%;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24);
+}
+
+.defaultTunaButton:hover {
+    background-color: #5AC271;
+}
+
+.defaultTunaButton:active {
+    position: relative;
+    top: 1px;
+}
+.defaultTunaButton:disabled,
+.defaultTunaButton[disabled],
+.defaultTunaButton.disabledSpinner {
+    background-color: #EEEEEE;
+    color: #BDBDBD;
+    box-shadow: none;
+}
+.defaultTunaButton.disabledSpinner {
+    color: transparent;
+    font-size: 0;
+}
+.defaultTunaButton.disabledSpinner:before {
+    content: "";
+    border: 3px solid #ccc;
+    border-top: 3px solid #31B34E;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    animation: spin .5s linear infinite;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Seletor de cartão salvo */
+
+.tunaCardContainer {
+    direction: rtl;
+}
+
+.tunaSavedCardBrand {
+    width: 54px;
+    height: auto;
+    margin: 0 10px;
+}
+
+.cardDataDiv {
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    flex: 1 1 auto;
+}
+.cardLabel {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardItem, .documentItem, .installmentItem, .addNewCardForm {
+    direction: ltr;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+
+    box-sizing: border-box;
+    place-content: center flex-start;
+    align-items: center;
+
+    background: #FFFFFF;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.102);
+    border-radius: 14px;
+    padding: 20px 15px;
+}
+.cardItem:last-child, .documentItem, .installmentItem, .addNewCardForm {
+    margin-bottom: 25px;
+}
+.documentItem, .installmentItem, .addNewCardForm {
+    padding: 20px 30px;
+}
+
+
+.addNewCardForm {
+    margin-bottom: 25px;
+}
+.addNewCardForm input[type=text] {
+    width: 100%;
+}
+
+.defaultPaymentFormDiv,
+.addNewCardForm #CREDIT_CARD_CVV,
+.addNewCardForm #CREDIT_CARD {
+    position: relative;
+}
+.addNewCardForm #CREDIT_CARD_CVV .defaultTunaCVVImage,
+.addNewCardForm #CREDIT_CARD .defaultTunaCardBrand {
+    position: absolute;
+    right: 0;
+    top: -8px;
+    margin-right: 0;
+}
+
+
+.addNewCardForm #CARD_HOLDER_NAME,
+.addNewCardForm #CREDIT_CARD {
+    flex-basis: 100%;
+    margin-bottom: 30px;
+}
+.addNewCardForm #VALIDITY {
+    flex-basis: 55%;
+    padding-right: 15px;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+}
+.addNewCardForm #CREDIT_CARD_CVV {
+    flex-basis: 45%;
+    margin-bottom: 25px;
+}
+
+#SINGLE_USE_FIELD {
+    flex-basis: 100%;
+    flex-direction: row;
+    display: flex;
+    place-content: center flex-start;
+    align-items: center;
+    
+}
+#SINGLE_USE_FIELD label{
+    padding-left: 10px;
+}
+
+.cardItem input[type=text] {
+    width: 110px;
+}
+
+.cardItem .tunaSavedCardBrand,
+.cardItem .cardDataDiv {
+    cursor: pointer;
+}
+.defaultTunaValidation {
+    color: #FF3030;
+    font-size: 12px;
+    padding-top: 5px;
+}
+.cardItem .defaultTunaValidation {
+    flex-basis: 100%;
+}
+
+#tuna_saved_card_cvv {
+    flex-basis: 100%;
+    position: relative;
+    margin-top: 15px;
+    margin-left: 30px;
+
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    place-content: flex-end flex-start;
+    align-items: flex-end;
+
+    flex-wrap: wrap;
+}
+
+.defaultTunaCVVImage,
+.defaultTunaCardBrand {
+    width: 54px;
+    height: 36px;
+    margin-right: 10px;
+}
+
+.cardName {
+    font-size: 16px;    
+    color: #333333;
+}
+.cardNumber {
+    font-size: 14px;
+    color: #999999;
+}
+
+.cvvInput {
+    height: 35px;
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.documentClass, #DOCUMENT, #SAVED_CARD_DOCUMENT, #INSTALLMENT, #SAVED_CARD_INSTALLMENT {
+    flex-basis: 100%;
+}
+.documentItem .defaultTunaInputText{
+    width: 100%;
+}
+
+.componentTitle {
+    font-size: 16px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    margin-bottom: 10px;
+}
+
+/* select box */
+
+.addNewCard, .viewSavedCards {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    border: none;
+    color: #31B34E;
+    padding: 0;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;    
+    place-content: center;
+    align-items: center;
+}
+
+.addNewCard::before { 
+    content: '';
+    background-image: url("img/icon-plus.svg");
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    background-size: 20px 20px;
+    display: inline-block;
+    margin-right: 5px;
+}
+.viewSavedCards span {
+    border: solid 2px #31B34E;
+    border-radius: 20px;
+    min-width: 22px;
+    min-height: 22px;
+    box-sizing: border-box;
+    margin-right: 5px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 18px;
+    padding: 0 5px;
+}
+
+.addNewCard:focus, .addNewCard:active, .viewSavedCards:focus, .viewSavedCards:active, .defaultTunaButton {outline:0;}
+
+
+/* Card Placeholder */
+.cardSkeleton {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    place-content: center flex-start;
+    align-items: center;
+    padding: 20px 15px;
+    background: #EEE;
+    border-radius: 14px;
+}
+
+.cardSkeleton .brand {
+    width: 54px;
+    height: 36px;
+    border-radius: 8px;
+    margin: 0 10px;
+    background: #DDD;
+}
+.cardSkeleton .line {
+    height: 14px;
+    border-radius: 4px;
+    background: #DDD;
+    display: flex;
+}
+@keyframes placeHolderShimmer {
+    0% {
+      background-position: 0px 0;
+    }
+    100% {
+      background-position: 100vw 0;
+    }
+}
+.cardSkeleton {
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #DDD;
+    background: linear-gradient(to right, #EEE 8%, #e6e6e6 18%, #EEE 33%);
+    
+    -webkit-backface-visibility: hidden;
+}
+
+.cardSkeleton .line:last-child { 
+    height: 12px;
+    margin-top: 6px;
+    width: 50%;
+}
+.cardSkeleton .radio {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background: #DDDDDD;
+}
+.cardSkeleton .text {
+    flex: 1 1 auto;
+}
+.cardSkeleton .line {
+    width: 70%;
+}
+
+
+/* Container */
+.tunaDefaultPaymentContainer {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 30px;
+    background-color: #f6f6f6;
+
+    place-content: stretch flex-start;
+    align-items: stretch;
+    max-width: 100%;
+}
+
+/* Responsive */
+@media screen and (max-width: 767px) {
+    .tunaDefaultPaymentContainer {
+        padding: 20px 15px;
+    }
+}
+
+
+/* Line Input */
+
+.defaultPaymentFormDiv input[type=text] {
+    background: transparent;
+    color: #333333;
+    border: none;
+    border-bottom: 2px solid #999999;
+    box-sizing: border-box;
+    border-radius: 0;
+    height: 38px;
+    padding: 0 12px;
+    word-wrap: break-word;
+    outline: none;
+    font-size: 16px;
+}
+.defaultPaymentFormDiv input[type=text]:focus {
+    border-bottom: 2px solid #44c767;
+}
+input[type=text]::placeholder {
+    color: #999;
+}
+input[type="text"]:disabled::placeholder {
+    color: #ccc;
+}
+
+/* Line Select */
+
+.defaultPaymentFormDiv select {
+    appearance: none;
+    width: 100%;
+    height: 38px;
+    border: 0;
+    font-size: 16px;
+    border-bottom: 2px solid #999999;
+    box-sizing: border-box;
+    border-radius: 0;
+    padding: 0 12px;
+    cursor: pointer;
+    background-color: #fff;
+    background-image: url("img/arrow-down.svg");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: center;
+    outline: none;
+    display: grid;
+    grid-template-areas: "select";
+    align-items: center;
+
+}
+.defaultPaymentFormDiv .select::after {
+    content: "";
+    width: 0.8em;
+    height: 0.5em;
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+    grid-area: select;
+}
+.defaultPaymentFormDiv select:focus {
+    outline: none;
+    justify-self: end;
+}
+
+input[type="text"]:disabled,
+select:disabled {
+    background-color: #F6F6F6;
+    border-bottom: 2px solid #ccc;
+    color: #ccc;
+    border-radius: 8px 8px 0 0;
+    opacity: 1;
+    cursor: auto;
+}
+
+/* Checkbox e Radio button  */
+
+.defaultPaymentFormDiv input[type="checkbox"],
+.defaultPaymentFormDiv input[type="radio"] {
+    --active: #31B34E;
+    --active-inner: #FFF;
+    --focus: 2px rgba(49,179,78, 0.3);
+    --border: #999;
+    --border-hover: #31B34E;
+    --background: #FFF;
+    --disabled: #CCC;
+    --disabled-inner: #FFF;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 21px;
+    outline: none;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin: 0;
+    cursor: pointer;
+    border: 2px solid var(--bc, var(--border));
+    background: var(--b, var(--background));
+    -webkit-transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+    transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+.defaultPaymentFormDiv input[type="checkbox"]:after,
+.defaultPaymentFormDiv input[type="radio"]:after {
+    content: "";
+    display: block;
+    left: -1px;
+    top: -1px;
+    position: absolute;
+
+}
+.defaultPaymentFormDiv input[type="checkbox"]:checked,
+.defaultPaymentFormDiv input[type="radio"]:checked {
+    --b: var(--active);
+    --bc: var(--active);
+    --d-o: 0.3s;
+    --d-t: 0.6s;
+    --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
+}
+.defaultPaymentFormDiv input[type="checkbox"]:disabled,
+.defaultPaymentFormDiv input[type="radio"]:disabled {
+    --b: var(--disabled);
+    cursor: not-allowed;
+    opacity: 0.9;
+}
+.defaultPaymentFormDiv input[type="checkbox"]:disabled:checked,
+.defaultPaymentFormDiv input[type="radio"]:disabled:checked {
+    --b: var(--disabled-inner);
+    --bc: var(--border);
+}
+
+.defaultPaymentFormDiv input[type="checkbox"]:hover:not(:checked):not(:disabled),
+.defaultPaymentFormDiv input[type="radio"]:hover:not(:checked):not(:disabled) {
+    --bc: var(--border-hover);
+}
+.defaultPaymentFormDiv input[type="checkbox"]:focus,
+.defaultPaymentFormDiv input[type="radio"]:focus {
+    box-shadow: 0 0 0 var(--focus);
+}
+.defaultPaymentFormDiv input[type="checkbox"]:not(.switch),
+.defaultPaymentFormDiv input[type="radio"]:not(.switch) {
+    width: 21px;
+}
+.defaultPaymentFormDiv input[type="checkbox"]:not(.switch):after,
+.defaultPaymentFormDiv input[type="radio"]:not(.switch):after {
+    opacity: var(--o, 0);
+}
+.defaultPaymentFormDiv input[type="checkbox"]:not(.switch):checked,
+.defaultPaymentFormDiv input[type="radio"]:not(.switch):checked {
+    --o: 1;
+}
+
+.defaultPaymentFormDiv input[type="checkbox"]:not(.switch) {
+    border-radius: 4px;
+}
+.defaultPaymentFormDiv input[type="checkbox"]:not(.switch):after {
+    width: 7px;
+    height: 14px;
+    border: 2px solid var(--active-inner);
+    border-top: 0;
+    border-left: 0;
+    left: 5px;
+    top: 0;
+    box-sizing: border-box;
+    -webkit-transform: rotate(var(--r, 20deg));
+            transform: rotate(var(--r, 20deg));
+}
+.defaultPaymentFormDiv input[type="checkbox"]:not(.switch):checked {
+    --r: 43deg;
+}
+.defaultPaymentFormDiv input[type="checkbox"].switch {
+    width: 38px;
+    border-radius: 11px;
+}
+input[type="checkbox"].switch:after {
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: var(--ab, var(--border));
+    -webkit-transform: translateX(var(--x, 0));
+            transform: translateX(var(--x, 0));
+}
+.defaultPaymentFormDiv input[type="checkbox"].switch:checked {
+    --ab: var(--active-inner);
+    --x: 17px;
+}
+.defaultPaymentFormDiv input[type="checkbox"].switch:disabled:not(:checked):after {
+    opacity: 0.6;
+}
+
+.defaultPaymentFormDiv input[type="radio"] {
+    border-radius: 50%;
+}
+.defaultPaymentFormDiv input[type="radio"]:after {
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background: var(--active-inner);
+    opacity: 0;
+    -webkit-transform: scale(var(--s, 0.7));
+            transform: scale(var(--s, 0.7));
+}
+.defaultPaymentFormDiv input[type="radio"]:checked {
+    --s: 0.5;
+}
+

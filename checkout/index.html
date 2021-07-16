@@ -1,15 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="./assets/js/tuna-sandbox.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./assets/css/components.css">
+    </link>
+
+    <title>Página de Checkout</title>
 </head>
 
 <body>
-    Checkout
+    <div id="root"></div>
+    <div id="container"></div>
+    <div id="dddoT"></div>
+
+    <script>
+        var tuna;
+        $.ajax({
+            url: 'https://token.tuna-demo.uy/api/Token/NewSession',
+            type: 'POST',
+            data: JSON.stringify({
+                Customer: { Email: "", ID: "1" },
+                PartnerID: 1,
+                AppToken: "d60a2679-cfc8-4557-aba0-e01f919fd05a"
+            }),
+            contentType: "application/json",
+            dataType: "json",
+            success: function (data) {
+                var tuna = Tuna(data.sessionId,
+                    (tokenType, tknPromisse, ccData) => {
+                        console.log(0, tokenType);
+                        console.log(1, ccData);
+                        tknPromisse
+                            .then(response => console.log(2, response))
+                            .catch(e => console.log(3, e));
+                    }
+                );
+
+                tuna.forgeDefaultForm("#root",
+                    {
+                        savedCardBoxTitle: "Cartões salvos",
+                        savedCardButtonTitle: "Usar cartão salvo",
+                        newCardBoxTitle: "Cartão novo",
+                        newCardButtonTitle: "Usar cartão novo",
+                        button: { title: "Pague com TUNA!" },
+                        cardHolderName: { title: "Nome no cartão" },
+                        document: { title: "CPF", buyerDocumentFormatter: tuna.getBuyerDocumentFormatter("pt-BR"), cleanMask: true },
+                        cardValidity: { title: "Validade", validationMessage: "Insira a validade do cartão!" },
+                        cardCvv: { title: "CVV", validationMessage: "Insira um CVV válido!", placeholder: "cvv" },
+                        saveCard: { title: "Salve o cartão para compras futuras!" },
+                        cardList: { title: "Cartões salvos", cardCvv: { placeholder: "cvv" } },
+                        installment: {
+                            title: "Parcelamento", options: [
+                                { key: 1, value: "1x sem juros" },
+                                { key: 2, value: "2x sem juros" },
+                                { key: 3, value: "3x sem juros" },
+                                { key: 4, value: "4x sem juros" },
+                                { key: 5, value: "5x sem juros" },
+                            ]
+                        },
+                    }
+                );
+            }
+        });
+    </script>
+    <style>
+        .test {
+            background-color: black;
+        }
+    </style>
+
 </body>
 
 </html>
