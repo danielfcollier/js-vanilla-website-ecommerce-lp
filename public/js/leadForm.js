@@ -16,7 +16,6 @@ function main() {
 
     form.addEventListener("submit", event => {
         event.preventDefault();
-        alert('Testando');
 
         leadResponse.read();
         leadResponse.store();
