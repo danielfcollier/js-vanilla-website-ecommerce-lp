@@ -12,7 +12,9 @@ const leadResponse = new LeadResponse(formElements);
 main();
 // ---
 function main() {
-    document.addEventListener("submit", event => {
+    const form = document.querySelector('.form-container');
+
+    form.addEventListener("submit", event => {
         event.preventDefault();
         alert('Testando');
 
