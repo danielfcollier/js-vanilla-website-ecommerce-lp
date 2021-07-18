@@ -12,7 +12,7 @@ const leadResponse = new LeadResponse(formElements);
 main();
 // ---
 function main() {
-    const form = document.querySelector('.form-container');
+    const form = document.querySelector('#usp-form');
     const formValidator = new LeadValidation(formElements);
 
     form.addEventListener("submit", event => {

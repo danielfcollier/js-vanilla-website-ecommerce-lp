@@ -2,45 +2,101 @@
 <html lang="pt-br">
 
 <head>
+    <!-- Default -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="/public/css/styles.css" />
-    <title>Black Friday de Produtos Ayurvédicos!!!</title>
+
+    <!-- JavaScript -->
+
+    <!-- Title -->
+    <title>Casa da Elegância!!!</title>
 </head>
 
 <body>
-    <section class="section-container" id="usp">
-        <!-- Cover Image -->
-        <!-- USP Headline-->
-        <!-- USP Offer -->
-        <!-- CTA Button -->
-        <!-- Know more Button -->
-    </section>
-    <section class="section-container background-footer" id="lead-bump">
-        <form class="bump form-container" id="lead-form" action="">
-            <!-- Name Email Submit Button -->
-            <input type="text" id="lead-form-name" placeholder="primeiro nome" oninput="validateForm(this)" />
-            <input type=" text" id="lead-form-email" placeholder="e-mail pessoal" oninput="validateForm(this)" />
-            <button type="button" id="lead-form-submit" placeholder="Inscrever-se"></button>
-        </form>
-    </section>
-    <section class="section-container" id="product-list">
-        <a href="/checkout/">click me</a>
-        <!-- Produto 01 onkeyup="validateEmail()" -->
-        <!-- Produto 02 -->
-        <!-- Produto 03 -->
-        <!-- Produto 04 -->
-        <!-- Produto 05 -->
-        <!-- Produto 06 -->
-    </section>
-    <section class="section-container" id="email-form">
-        <!-- Name Email Submit Button -->
-    </section>
-    <section class="section-container background-footer" id="footer">
-        <!-- Footer -->
+    <!-- USP Offer -->
+    <section class="section-usp-offer">
+
+        <div class="usp-hero-image">
+            <img class="usp-hero-image-details" src="/public/img/usp-cover.jpg" alt="Banner Image" />
+        </div>
+
+        <div class="usp-hero-overlay"></div>
+
+        <div class="usp-offer-div">
+            <span class="usp-offer-text">
+                <p class="usp-offer-text-h1">
+                    Black-Friday de Sapatos na Casa da Elegância!!!
+                </p>
+                <p class="usp-offer-text-p">
+                    Cadastre-se para receber todas as ofertas!!!
+                </p>
+                <form id="usp-form" action="">
+                    <input class="lead-form-input" type="text" id="lead-form-name" placeholder="primeiro nome"
+                        oninput="validateForm(this)" />
+                    <br>
+                    <input class="lead-form-input" type=" text" id="lead-form-email" placeholder="e-mail pessoal"
+                        oninput="validateForm(this)" />
+                    <br>
+                    <button class="lead-form-button"> Cadastrar-se </button>
+                </form>
+            </span>
+        </div>
+
     </section>
 
+    <!-- Lead Bumper -->
+
+    <!-- Store Offers -->
+
+    <!-- Lead Bumper -->
+
+    <!-- Footer -->
+    <footer class="section-footer">
+
+        <div class="footer-left">
+            <h3>Casa da Elegância</h3>
+
+            <p class="footer-links">
+                <a href="/">Início</a>
+                |
+                <a href="/sobre">Sobre</a>
+                |
+                <a href="/contato">Contato</a>
+            </p>
+
+            <p class="footer-company-name">
+                © 2021 Casa da Elegância.
+                <br>
+                Todos os direitos reservados.
+            </p>
+        </div>
+
+        <div class="footer-center">
+            <p class="footer-company-about">
+                <span>Sobre a Casa da Elegância</span>
+                Nós oferecemos produtos 100% sustentáveis desenvolvidos a partir moléculas de couro sintético.
+            </p>
+            <p><a href="mailto:contato@casadaelegancia.com.br">contato@casadaelegancia.com.br</a></p>
+        </div>
+
+        <div class="footer-right">
+            <p>
+                Ambiente seguro.
+                <br>
+                Aceitamos todas as formas de pagamento.
+                <br>
+                Pague com Tuna Sandbox.
+                <br>
+            </p>
+        </div>
+
+    </footer>
+
+    <!-- JavaScript -->
     <script src="/public/js/leadForm.js" type="module"></script>
 </body>
 
