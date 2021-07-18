@@ -1,5 +1,5 @@
 // ---
-import LeadForm from "./LeadForm.js";
+import LeadForm from "/public/js/Lead/LeadForm.js";
 // ---
 export default class LeadValidation extends LeadForm {
     // ---
