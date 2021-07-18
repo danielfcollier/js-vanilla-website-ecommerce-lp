@@ -1,6 +1,6 @@
 // ---
-import LeadResponse from "/public/js/Lead/LeadResponse.js";
-import LeadValidation from "/public/js/Lead/LeadValidation.js";
+import LeadResponse from "./Lead/LeadResponse.js";
+import LeadValidation from "./Lead/LeadValidation.js";
 // ---
 const formElements = {
     name: "lead-form-name",

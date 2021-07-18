@@ -1,5 +1,5 @@
 // ---
-import LeadForm from "/public/js/Lead/LeadForm.js";
+import LeadForm from "./LeadForm.js";
 // ---
 export default class LeadResponse extends LeadForm {
     // ---
