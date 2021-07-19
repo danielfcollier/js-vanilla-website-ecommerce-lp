@@ -30,6 +30,6 @@ Use Liver Server VSCode extension at **./pages/home/**  to get a local preview o
 
 - see the [file _redirects](./_redirects) to understand the basics of the Netlify page routing.
 
-- an [error page](/pages/error)] is provided.
+- an [error page](/pages/error) is provided.
 
 - contains files to extend the current project to included a payment system in sandbox mode.
