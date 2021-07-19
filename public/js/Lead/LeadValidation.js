@@ -9,7 +9,7 @@ export default class LeadValidation extends LeadForm {
         super(formElements);
 
         this.#isValid = Object.create(formElements);
-        for (const property in this.isValid) {
+        for (const property in this.#isValid) {
             this.#isValid[property] = false;
         }
     }
