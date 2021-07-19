@@ -16,7 +16,7 @@ After inserting your data, go to the browser console and type **localStorage** t
 
 Get a copy of the project with:
 
-```
+```sh
 git clone https://github.com/danielfcollier/website-js-ecommerce-lp.git
 ```
 
