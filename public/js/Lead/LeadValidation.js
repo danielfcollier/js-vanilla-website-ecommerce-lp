@@ -3,8 +3,6 @@ import LeadForm from "./LeadForm.js";
 // ---
 export default class LeadValidation extends LeadForm {
     // ---
-    isValid;
-    // ---
     constructor(formElements) {
         super(formElements);
 
