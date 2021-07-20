@@ -30,7 +30,38 @@ export default class LeadResponse extends LeadForm {
         // Modal Window or Text Line: say thank you!
     }
     // ---
-    store() { }
+    store() {
+        const payload = {
+            FullName: this.formResponse.name,
+            Email: this.formResponse.email,
+            Platform: window.navigator.platform,
+            Vendor: window.navigator.vendor,
+            Geolocation: 'not implemented'
+        };
+
+        const url = "https://script.google.com/macros/s/AKfycbzirntklCx9Mh8tXf7TTPtiDCz1XpWh-UPiq_McE992brKb02M2R_XKzE54CfFt5N6Mtw/exec";
+        const params = {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        };
+
+        fetch(url, params)
+            .then(response => response.text())
+            .then((data) => resolve(data ? JSON.parse(data) : {}))
+            .catch((error) => reject(error));
+
+        function resolve(data) {
+            console.log("Success");
+        }
+
+        function reject(error) {
+            console.log("Error");
+        }
+    }
     // ---
 }
 // EOF
