@@ -51,8 +51,8 @@ export default class LeadResponse extends LeadForm {
 
         fetch(url, params)
             .then(response => response.text())
-            .then((data) => resolve(data ? JSON.parse(data) : {}))
-            .catch((error) => reject(error));
+            .then(data => resolve(data ? JSON.parse(data) : {}))
+            .catch(error => reject(error));
 
         function resolve(data) {
             console.log("Success");
