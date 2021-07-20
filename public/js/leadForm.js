@@ -22,8 +22,6 @@ function main() {
             return false;
         }
 
-        alert("Gratidão pela inscrição!");
-
         leadResponse.read();
         leadResponse.local();
         leadResponse.clear();
