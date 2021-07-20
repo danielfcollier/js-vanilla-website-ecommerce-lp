@@ -9,9 +9,9 @@ const formElements = {
 // ---
 const leadResponse = new LeadResponse(formElements);
 // ---
-main();
+leadForm();
 // ---
-function main() {
+function leadForm() {
     const form = document.querySelector('#usp-form');
     const formValidator = new LeadValidation(formElements);
 
@@ -26,7 +26,6 @@ function main() {
         leadResponse.local();
         leadResponse.clear();
         leadResponse.greet();
-
         leadResponse.store();
 
         return true;
