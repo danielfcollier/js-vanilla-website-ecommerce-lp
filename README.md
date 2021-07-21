@@ -31,7 +31,7 @@ This app also perform post requests to send lead form data to a Google Sheets th
 
 ### [Sheet Link](https://docs.google.com/spreadsheets/d/18sQdclGR2sS0yC-DDDAVfq54gm_W4eMSuQrv1IwtPS4/edit?usp=sharing)
 
-### [Apps Script Codebase](../database-gas-ecommerce-lp)
+### [Apps Script Codebase](https://github.com/danielfcollier/database-gas-ecommerce-lp)
 
 ## More
 
